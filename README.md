@@ -57,16 +57,17 @@ O projeto utiliza as seguintes dependências:
 
    
    git clone https://github.com/PedroVella/furia_chatbot.git
+
    cd furia_chatbot
    
 
-2. *Instale as dependências:*
+3. *Instale as dependências:*
 
    
    pip install -r requirements.txt
    
 
-3. *Configure as variáveis de ambiente:*
+4. *Configure as variáveis de ambiente:*
 
    Crie um arquivo .env na raiz do projeto com a seguinte variável:
 
@@ -76,7 +77,7 @@ O projeto utiliza as seguintes dependências:
 
    Para obter um token, converse com o [@BotFather](https://t.me/BotFather) no Telegram.
 
-4. *Execute o bot:*
+5. *Execute o bot:*
    
    python -m bot.main
    

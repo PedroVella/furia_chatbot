@@ -9,6 +9,9 @@ from bot.handlers.redes_handler import redes
 from bot.handlers.recordes import recordes
 from bot.handlers.agenda_handler import agenda
 from bot.handlers.comandos_handler import comandos
+import os
+
+
 
 # Comando /start (mensagem de boas-vindas)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -25,6 +28,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "❓ /comandos – Mostrar todos os comandos\n"
     )
     await update.message.reply_text(start_text, parse_mode="Markdown")
+
+app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
 # Inicializando a aplicação
 app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
@@ -56,5 +61,12 @@ app.add_handler(CommandHandler("agenda", agenda))
 # Adicionando o comando /comandos
 app.add_handler(CommandHandler("comandos", comandos))
 
-# Iniciando o bot com polling
-app.run_polling()
+# Iniciando com Webhook
+if __name__ == "__main__":
+    PORTA = int(os.environ.get("PORT", 8443))
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=PORTA,
+        url_path=TELEGRAM_TOKEN,
+        webhook_url=f"https://furia-chatbot-t5jk.onrender.com/{TELEGRAM_TOKEN}"
+    )

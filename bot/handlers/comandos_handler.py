@@ -10,7 +10,7 @@ async def comandos(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "🏆 /titulos – Ver títulos conquistados\n"
         "🥇 /recordes – Ver os recordes da Furia\n"
         "📖 /historia – Conhecer a história da FURIA CS\n"
-        "🔗 /contato – Contato e redes sociais\n"
+        "🔗 /redes – Contato e redes sociais\n"
         "❓ /comandos – Mostrar todos os comandos\n"
     )
 

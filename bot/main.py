@@ -4,18 +4,27 @@ from bot.config.settings import TELEGRAM_TOKEN
 from bot.handlers.elenco_handler import elenco
 from bot.handlers.titulos_handler import titulos
 from bot.handlers.historia_handler import historia
-from bot.handlers.veterano import veterano
+from bot.handlers.ranking_handler import ranking
+from bot.handlers.contato_handler import contato
+from bot.handlers.recordes import recordes
+from bot.handlers.agenda_handler import agenda
+from bot.handlers.comandos_handler import comandos
 
 
 # Comando /start (mensagem de boas-vindas)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     start_text = (
-        "*👋 Olá, fã da FURIA CS! Como posso te ajudar?*\n\n"
-        "• Use */elenco* para saber quem são os jogadores atuais da FURIA.\n"
-        "• Use */titulos* para saber os principais títulos conquistados pela FURIA.\n"
-        "• Use */historia* para saber mais sobre a história da FURIA.\n"
-        "• Use */veterano* para saber quem é o jogador mais antigo da FURIA."
-        )
+        "👋 *Olá, fã da FURIA CS! Como posso te ajudar?*\n\n"
+        "📋 *Comandos disponíveis:*\n\n"
+        "👥 /elenco – Ver elenco atual da FURIA\n"
+        "📅 /agenda – Ver próximos jogos\n"
+        "🌍 /ranking – Ver posição no ranking mundial\n"
+        "🏆 /titulos – Ver títulos conquistados\n"
+        "🥇 /recordes – Ver os recordes da FURIA\n"
+        "📖 /historia – Conhecer a história da FURIA CS\n"
+        "🔗 /contato – Contato e redes sociais\n"
+        "❓ /comandos – Mostrar todos os comandos\n"
+    )
     await update.message.reply_text(start_text, parse_mode="Markdown")
 
 # Inicializando a aplicação
@@ -27,14 +36,26 @@ app.add_handler(CommandHandler("start", start))
 # Adicionando o comando /elenco
 app.add_handler(CommandHandler("elenco", elenco))
 
+# Adicionando o comando /ranking
+app.add_handler(CommandHandler("ranking", ranking))
+
 # Adicionando o comando /titulos
 app.add_handler(CommandHandler("titulos", titulos))
 
 # Adicionando o comando /historia
 app.add_handler(CommandHandler("historia", historia))
 
-# Adicionando o comando /veterano
-app.add_handler(CommandHandler("veterano", veterano))
+# Adicionando o comando /recordes
+app.add_handler(CommandHandler("recordes", recordes))
+
+# Adicionando o comando /contato
+app.add_handler(CommandHandler("contato", contato))
+
+# Adicionando o comando /agenda
+app.add_handler(CommandHandler("agenda", agenda))
+
+# Adicionando o comando /comandos
+app.add_handler(CommandHandler("comandos", comandos))
 
 # Iniciando o bot com polling
 app.run_polling()

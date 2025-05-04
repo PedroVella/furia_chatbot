@@ -5,11 +5,11 @@ async def elenco(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Respondendo com o elenco atual da FURIA
     elenco_text = (
         "*🎮 Elenco atual da FURIA CS:*\n\n"
-        "• 🇧🇷 *yuurih* - Yuri Boian\n"
+        "• 🇧🇷 *Yuurih* - Yuri Boian\n"
         "• 🇧🇷 *KSCERATO* - Kaike Cerato\n"
         "• 🇧🇷 *FalleN* - Gabriel Toledo\n"
-        "• 🇷🇺 *molodoy* - Danil Golubenko\n"
+        "• 🇰🇿 *Molodoy* - Danil Golubenko\n"
         "• 🇱🇻 *YEKINDAR* - Mareks Gaļinskis\n"
-        "• 🇧🇷 *sidde* - Sidnei Macedo (Coach)"
+        "• 🇧🇷 *Sidde* - Sidnei Macedo (Coach)"
     )
     await update.message.reply_text(elenco_text, parse_mode="Markdown")

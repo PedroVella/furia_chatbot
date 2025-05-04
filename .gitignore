@@ -1,13 +1,46 @@
-# Ignorar ambiente virtual
+# Ambientes virtuais
 venv/
-
-# Ignorar arquivo .env que contém variáveis sensíveis
+env/
+ENV/
 .env
 
-# Ignorar arquivos de cache do Python
-__pycache__/
-*.pyc
+# Arquivos e diretórios de cache Python
+_pycache_/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
 
-# Ignorar configurações de IDE (caso use alguma)
-.vscode/
+# Arquivos de log
+*.log
+logs/
+
+# Ambiente virtual
+venv/
+env/
+
+# Variáveis de ambiente e configurações sensíveis
+.env
+*.env
+
+# Arquivos de cache Python
+_pycache_/
+*.py[cod]
+*$py.class
+
+# Arquivos de log
+*.log
+
+# Configurações de IDE
 .idea/
+.vscode/
+
+# Configurações do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.tmp
+*.bak
+*~

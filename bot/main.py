@@ -9,8 +9,9 @@ from bot.handlers.redes_handler import redes
 from bot.handlers.recordes import recordes
 from bot.handlers.agenda_handler import agenda
 from bot.handlers.comandos_handler import comandos
-import os
-
+import os 
+from bot.keep_active import start_server
+start_server()
 
 
 # Comando /start (mensagem de boas-vindas)

@@ -20,6 +20,27 @@ O bot responde aos seguintes comandos:
 - /redes - Fornece informações das redes sociais
 - /comandos - Lista todos os comandos disponíveis
 
+## 🛠️ Estrutura do Projeto
+
+furia_chatbot/
+├── .git/                     # Diretório git
+├── bot/                      # Diretório principal do bot
+│   ├── config/               # Configurações do bot
+│   │   ├── settings.py       # Configurações de variáveis de ambiente
+│   │   └── config.py         # Arquivo de configuração adicional
+│   ├── handlers/             # Manipuladores de comandos do bot
+│   │   ├── agenda_handler.py        # Manipulador do comando /agenda
+│   │   ├── comandos_handler.py      # Manipulador do comando /comandos
+│   │   ├── midias_handler.py        # Manipulador do comando /midias
+│   │   ├── elenco_handler.py        # Manipulador do comando /elenco
+│   │   ├── historia_handler.py      # Manipulador do comando /historia
+│   │   ├── ranking_handler.py       # Manipulador do comando /ranking
+│   │   ├── recordes.py              # Manipulador do comando /recordes
+│   │   └── titulos_handler.py       # Manipulador do comando /titulos
+│   └── main.py               # Arquivo principal que inicializa o bot
+├── requirements.txt          # Dependências do projeto
+├── .gitignore                # Arquivos a serem ignorados pelo git
+└── README.md                 # Documentação do projeto
 
 ## 📦 Requisitos
 

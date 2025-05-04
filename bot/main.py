@@ -11,8 +11,8 @@ from bot.handlers.agenda_handler import agenda
 from bot.handlers.comandos_handler import comandos
 import os 
 from bot.keep_active import start_server
-start_server()
 
+start_server()
 
 # Comando /start (mensagem de boas-vindas)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -29,8 +29,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "❓ /comandos – Mostrar todos os comandos\n"
     )
     await update.message.reply_text(start_text, parse_mode="Markdown")
-
-app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
 # Inicializando a aplicação
 app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()

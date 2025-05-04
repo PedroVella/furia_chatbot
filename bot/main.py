@@ -72,9 +72,6 @@ app.add_handler(CommandHandler("agenda", agenda))
 # Adicionando o comando /comandos
 app.add_handler(CommandHandler("comandos", comandos))
 
-# Iniciando o bot com polling
-app.run_polling()
-
 PORT = int(os.environ.get('PORT', 10000))
 
 # Iniciando o bot com polling e configuração para o servidor web

@@ -9,22 +9,6 @@ from bot.handlers.redes_handler import redes
 from bot.handlers.recordes import recordes
 from bot.handlers.agenda_handler import agenda
 from bot.handlers.comandos_handler import comandos
-import threading
-from http.server import HTTPServer, BaseHTTPRequestHandler
-
-# Servidor HTTP simples
-class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
-        self.wfile.write(b'Furia ChatBot esta funcionando!')
-
-def run_server():
-    port = int(os.environ.get('PORT', 5000))
-    server = HTTPServer(('0.0.0.0', port), SimpleHTTPRequestHandler)
-    logger.info(f'Servidor HTTP iniciado na porta {port}')
-    server.serve_forever()
 
 # Comando /start (mensagem de boas-vindas)
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -72,13 +56,5 @@ app.add_handler(CommandHandler("agenda", agenda))
 # Adicionando o comando /comandos
 app.add_handler(CommandHandler("comandos", comandos))
 
-PORT = int(os.environ.get('PORT', 10000))
-
-# Iniciando o bot com polling e configuração para o servidor web
-app.run_polling(allowed_updates=Update.ALL_TYPES, 
-                listen='0.0.0.0', 
-                port=PORT)
-
-# Iniciar o servidor web
-t = threading.Thread(target=run_server)
-t.start()
+# Iniciando o bot com polling
+app.run_polling()

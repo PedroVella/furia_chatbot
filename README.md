@@ -81,6 +81,10 @@ O projeto utiliza as seguintes dependências:
    python -m bot.main
    
 
+## 💬 Achar no Telegram
+
+Para achar o meu bot (furia chatbot) no telegram, pesquise por @vella_furia_chat_bot na barra de pesquisa do telegram
+
 ## 👨‍💻 Como Contribuir
 
 1. Faça um fork do projeto

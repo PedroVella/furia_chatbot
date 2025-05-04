@@ -5,10 +5,10 @@ import threading
 
 app = Flask(__name__)
 
-@app.route('/ping')
+@app.route('/ping', methods=['HEAD']) 
 def ping():
     print("Ping received")
-    return 'Pong!'
+    return 200
 
 def run():
     app.run(host="0.0.0.0", port=8080)

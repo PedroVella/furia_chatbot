@@ -21,7 +21,7 @@ O bot responde aos seguintes comandos:
 - /comandos - Lista todos os comandos disponíveis
 
 ## 🛠️ Estrutura do Projeto
-'''
+```
 furia_chatbot/
 ├── .git/                     # Diretório git
 ├── bot/                      # Diretório principal do bot
@@ -41,7 +41,7 @@ furia_chatbot/
 ├── requirements.txt          # Dependências do projeto
 ├── .gitignore                # Arquivos a serem ignorados pelo git
 └── README.md                 # Documentação do projeto
-'''
+```
 ## 📦 Requisitos
 
 O projeto utiliza as seguintes dependências:
